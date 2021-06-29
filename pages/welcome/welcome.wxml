@@ -1,0 +1,10 @@
+<!--pages/welcome/welcome.wxml-->
+<!-- <text>pages/welcome/welcome.wxml</text> -->
+<view class="container">
+  <image src="/images/pic-avatar.jpg"  class="user-avatar"></image>
+  <text class="motto">Hello,cheng5</text>
+  <!-- <button>开启小程序之旅</button> -->
+  <view class="journey-container">
+    <text class="journey">开启小程序之旅</text>
+  </view>
+</view>
