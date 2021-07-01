@@ -1,0 +1,15 @@
+<view class="container">
+  <image src="/images/1.jpg" class="head-img"></image>
+  <view class="author-date">
+    <image src="/images/pic-avatar.jpg" class="avatar"></image>
+    <text class="author">cheng5.du</text>
+    <text class="const-text">发表于</text>
+    <text class="date">24小时前</text>
+  </view>
+  <text class="title">2021年庆祝建党100周年</text>
+  <view class="tool">
+    <image src="/images/collect.png" class="circle-img"></image>
+    <image src="/images/share.png" class="circle-img"></image>
+  </view>
+  <text class="detail">2021年7月1日，今天是一个大日子，举国欢庆，因为中华人民共和国共产党成立100周年了，习近平发表了重要的讲话，指明了党以后的发展路线，也说明了我们中国的青年要站起来，我们需要建设我们的祖国，让他更加强大。</text>
+</view>
