@@ -11,7 +11,7 @@
     </swiper-item>
   </swiper>
   <block wx:for="{{postList}}" wx:key="postId">
-    <view data-post-id="{{item.postId}}" class="post-container" bindtap="onGoToDetail">
+    <!-- <view data-post-id="{{item.postId}}" class="post-container" bindtap="onGoToDetail">
       <view class="post-author-date">
         <image src="{{item.avatar}}" class="post-author"></image>
         <text class="post-date">{{item.date}}</text>
@@ -26,6 +26,7 @@
         <l-icon name="eye" size="32" color="#bdbdbd" class="post-like-image" />
         <text class="post-like-font">{{item.reading}}</text>
       </view>
-    </view>
+    </view> -->
+    <post item="{{item}}" bindtriggergotodetail="onGoToDetail"/>
   </block>
 </view>

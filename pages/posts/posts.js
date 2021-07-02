@@ -8,10 +8,10 @@ Page({
   data: {
     postList: []
   },
-  onGoToDetail(event) {
-    const postId = event.currentTarget.dataset.postId
+  onGoToDetail(e) {
+    // const postId = event.currentTarget.dataset.postId
     wx.navigateTo({
-      url: `/pages/post-detail/post-detail?pid=${postId}`
+      url: `/pages/post-detail/post-detail?pid=${e.detail.pid}`
     })
   },
 

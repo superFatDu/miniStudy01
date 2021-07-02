@@ -10,7 +10,13 @@ let postList = [{
     author: 'cheng5',
     date: '2021-7-1 08:08:08',
     avatar: '/images/pic-avatar.jpg',
-    postId: 1
+    postId: 1,
+    music: {
+      url: 'http://m7.music.126.net/20210702124723/9c8c8e8b75dd5c3d3d05fbab60802d7f/ymusic/obj/w5zDlMODwrDDiGjCn8Ky/3932030046/ef67/1f20/06ae/df60e94d8de070d5aec54b60cb4c667c.flac',
+      title: '笑看風雲',
+      coverImg: 'http://p3.music.126.net/PzAsHnOhUq8CtT_5orT5Hg==/109951165303047734.jpg',
+      singer: '群星'
+    }
   },
   {
     title: '香港回归24周年',
@@ -24,7 +30,13 @@ let postList = [{
     author: 'cheng5.杜',
     date: '2021-7-1 08:08:08',
     avatar: '/images/pic-avatar.jpg',
-    postId: 2
+    postId: 2,
+    music: {
+      url: 'http://m7.music.126.net/20210702105244/472ce4ddca129733fa3c136b0f6d02e3/ymusic/a007/1dc9/d295/6663c777dbd66cb71ac832a6828cae7f.flac',
+      title: '为爱痴狂',
+      coverImg: 'http://p3.music.126.net/nSCOYgdN2yo1e-NdQWa4CQ==/18511377767232313.jpg',
+      singer: '刘若英'
+    }
   }
 ]
 

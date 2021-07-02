@@ -2,6 +2,7 @@
 import {
   postList
 } from '../../data/data'
+const app = getApp()
 Page({
 
   /**
@@ -9,8 +10,31 @@ Page({
    */
   data: {
     _pid: null,
+    _bam: null,
     detailInfo: {},
-    isCollected: false
+    isCollected: false,
+    isPlaying: false
+  },
+  onMusicStart() {
+    const bam = this.data._bam
+    bam.src = this.data.detailInfo.music.url
+    bam.title = this.data.detailInfo.music.title
+    bam.coverImgUrl = this.data.detailInfo.coverImg
+    bam.singer = this.data.detailInfo.singer
+    this.setData({
+      isPlaying: true
+    })
+    app.gIsPlayingMusic = true
+    app.gPlayingMusicId = this.data._pid
+  },
+  onMusicPause() {
+    // const bam = this.data._bam
+    this.data._bam.pause()
+    this.setData({
+      isPlaying: false
+    })
+    app.gIsPlayingMusic = false
+    app.gPlayingMusicId = -1
   },
   onCollect() {
     let collectsObj = wx.getStorageSync("collectsObj")
@@ -50,6 +74,7 @@ Page({
   onLoad: function (options) {
     this.data._pid = options.pid
     const detailInfo = postList.filter(item => item.postId == options.pid)[0]
+    console.log(detailInfo)
     this.setData({
       detailInfo
     })
@@ -59,6 +84,20 @@ Page({
       this.setData({
         isCollected: collectsObj[options.pid]
       })
+    }
+    
+    const bam = wx.getBackgroundAudioManager()
+    this.data._bam = bam
+    bam.onPlay(this.onMusicStart)
+    bam.onPause(this.onMusicPause)
+
+    console.log(app)
+    if (app.gIsPlayingMusic && app.gPlayingMusicId !== -1 && app.gPlayingMusicId == options.pid) {
+      this.setData({
+        isPlaying: true
+      })
+    } else {
+      bam.stop()
     }
   },
 

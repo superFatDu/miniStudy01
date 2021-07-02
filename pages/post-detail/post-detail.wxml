@@ -1,5 +1,7 @@
 <view class="container">
   <image src="{{detailInfo.headImgSrc}}" class="head-img"></image>
+  <image wx:if="{{!isPlaying}}" class="audio" src="/images/bofang.png" bindtap="onMusicStart"></image>
+  <image wx:else class="audio" src="/images/zanting.png" bindtap="onMusicPause"></image>
   <view class="author-date">
     <image src="{{detailInfo.avatar}}" class="avatar"></image>
     <text class="author">{{detailInfo.author}}</text>
