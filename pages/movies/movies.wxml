@@ -1,0 +1,5 @@
+<view>
+  <movie-list movies="{{inTheaters}}" title="正在热映" ex-class="movie-list" />
+  <movie-list movies="{{comingSoon}}" title="即将上映" ex-class="movie-list" />
+  <movie-list movies="{{top250}}" title="豆瓣TOP250" ex-class="movie-list" />
+</view>
