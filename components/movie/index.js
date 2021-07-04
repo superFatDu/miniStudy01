@@ -3,6 +3,7 @@ Component({
   /**
    * 组件的属性列表
    */
+  externalClasses: ['ex-class'],
   properties: {
     movie: Object
   },

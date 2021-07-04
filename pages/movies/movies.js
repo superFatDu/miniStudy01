@@ -51,5 +51,11 @@ Page({
         })
       }
     })
+  },
+  onGoToMore(e) {
+    const type = e.currentTarget.dataset.type
+    wx.navigateTo({
+      url: '/pages/more-movie/more-movie?type=' + type,
+    })
   }
 })

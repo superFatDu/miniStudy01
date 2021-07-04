@@ -1,5 +1,6 @@
 <view>
-  <movie-list movies="{{inTheaters}}" title="正在热映" ex-class="movie-list" />
-  <movie-list movies="{{comingSoon}}" title="即将上映" ex-class="movie-list" />
-  <movie-list movies="{{top250}}" title="豆瓣TOP250" ex-class="movie-list" />
+  <l-search l-class="ex-search-height" placeholder="盗梦空间" show-cancel-bar="{{false}}" />
+  <movie-list data-type="in_theaters" bindtap="onGoToMore" movies="{{inTheaters}}" title="正在热映" ex-class="movie-list" />
+  <movie-list data-type="coming_soon" bindtap="onGoToMore" movies="{{comingSoon}}" title="即将上映" ex-class="movie-list" />
+  <movie-list data-type="top250" bindtap="onGoToMore" movies="{{top250}}" title="豆瓣TOP250" ex-class="movie-list" />
 </view>

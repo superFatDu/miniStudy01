@@ -2,6 +2,9 @@
 page {
   background-color: #f2f2f2;
 }
+.ex-search-height {
+  height: 80rpx !important;
+}
 .movie-list {
   margin-bottom: 30rpx;
 }
