@@ -7,8 +7,7 @@ Page({
    */
   data: {
     movies: [],
-    _type: null,
-    _start: 0
+    _type: null
   },
 
   /**
@@ -25,7 +24,7 @@ Page({
     wx.request({
       url: app.baseURL + type,
       data: {
-        start: this.data._start * 12,
+        start: this.data.movies.length,
         count: 12
       },
       success: (res) => {
@@ -34,7 +33,6 @@ Page({
           this.setData({
             movies: [...this.data.movies, ...res.subjects]
           })
-          if (res.subjects.length === 12) this.data._start += 1
         }
       }
     })
