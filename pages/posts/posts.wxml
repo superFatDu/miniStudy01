@@ -27,6 +27,6 @@
         <text class="post-like-font">{{item.reading}}</text>
       </view>
     </view> -->
-    <post item="{{item}}" bindtriggergotodetail="onGoToDetail"/>
+    <post item="{{item}}" bindtriggerpost="onGoToDetail"/>
   </block>
 </view>

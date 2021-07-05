@@ -4,14 +4,6 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    // postId: String,
-    // avatar: String,
-    // date: String,
-    // title: String,
-    // imgSrc: String,
-    // content: String,
-    // collection: String,
-    // reading: String
     item: Object
   },
 
@@ -26,9 +18,9 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    _onGoToDetail(event) {
+    _onTap(event) {
       const pid = event.currentTarget.dataset.postId
-      this.triggerEvent("triggergotodetail", {pid})
+      this.triggerEvent("triggerpost", {pid})
     }
   }
 })

@@ -17,23 +17,53 @@ Page({
     this.data._type = options.type
     this.getDataInfo(options.type)
   },
+  onReady() {
+    switch(this.data._type) {
+      case 'in_theaters':
+        wx.setNavigationBarTitle({
+          title: '正在热映',
+        })
+        break;
+      case 'coming_soon':
+        wx.setNavigationBarTitle({
+          title: '即将上映',
+        })
+        break;
+      case 'top250':
+        wx.setNavigationBarTitle({
+          title: '豆瓣TOP250',
+        })
+        break;
+      case "default":
+        wx.setNavigationBarTitle({
+          title: '正在热映',
+        })
+        break;      
+    }
+  },
   onReachBottom() {
     this.getDataInfo(this.data._type)
   },
-  getDataInfo(type) {
+  onPullDownRefresh() {
+    this.getDataInfo(this.data._type, 0)
+  },
+  getDataInfo(type, start = null) {
+    wx.showNavigationBarLoading()
     wx.request({
       url: app.baseURL + type,
       data: {
-        start: this.data.movies.length,
+        start: start === 0 ? start : this.data.movies.length,
         count: 12
       },
       success: (res) => {
         if (res.statusCode === 200) res = res.data
         if (res.subjects.length) {
           this.setData({
-            movies: [...this.data.movies, ...res.subjects]
+            movies: start === 0 ? res.subjects : [...this.data.movies, ...res.subjects]
           })
         }
+        wx.hideNavigationBarLoading()
+        if (start === 0) wx.stopPullDownRefresh()
       }
     })
   }
