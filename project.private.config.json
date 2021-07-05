@@ -13,9 +13,9 @@
     "miniprogram": {
       "list": [
         {
-          "name": "pages/movie-detail/movie-detail",
-          "pathName": "pages/movie-detail/movie-detail",
-          "query": "mid=305",
+          "name": "pages/test/test",
+          "pathName": "pages/test/test",
+          "query": "",
           "scene": null
         }
       ]
